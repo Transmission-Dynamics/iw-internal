@@ -1,0 +1,4 @@
+# Batch files have to keep their Windows line endings or the server
+# quietly runs half of them.
+*.bat text eol=crlf
+*.ps1 text eol=crlf

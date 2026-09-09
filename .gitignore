@@ -1,0 +1,10 @@
+# Windows and editor litter
+Thumbs.db
+desktop.ini
+*.log
+logs/
+
+# The helper that commits and pushes, and the note Claude leaves with an update
+push-to-github.bat
+push.log
+commit-message.txt
