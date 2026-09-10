@@ -20,9 +20,9 @@ otherwise a certificate for this name.
 
 On the server, next to the `asksophie` folder:
 
-    git clone https://github.com/Transmission-Dynamics/internal.git internal
-    cd internal
-    git checkout live
+    git clone --branch live https://TOKEN@github.com/Transmission-Dynamics/iw-internal.git internal
+
+with the same iw-server token askSOPHIE now uses in place of TOKEN.
 
 ## 4. Apache
 
