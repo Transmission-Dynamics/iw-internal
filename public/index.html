@@ -18,7 +18,7 @@
     --sophie: #d62828;
     --timely: #1d6fd6;
     --jam: #6a2fb5;
-    --poppy: #e0771c;
+    --nucleus: #e0771c;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; height: 100%; }
@@ -122,7 +122,7 @@
   .app.sophie .badge { background: var(--sophie); }
   .app.timely .badge { background: var(--timely); }
   .app.jam .badge { background: var(--jam); }
-  .app.poppy .badge { background: var(--poppy); }
+  .app.nucleus .badge { background: var(--nucleus); }
   .app h2 {
     font-size: 26px;
     font-weight: 700;
@@ -144,7 +144,7 @@
   .app.sophie .open { color: var(--sophie); }
   .app.timely .open { color: var(--timely); }
   .app.jam .open { color: var(--jam); }
-  .app.poppy .open { color: var(--poppy); }
+  .app.nucleus .open { color: var(--nucleus); }
   .app .open svg { width: 20px; height: 20px; }
   /* A card for something that is not built yet. It says so, and it does not
      pretend to be a door: nothing lifts, nothing follows, nothing to tab to. */
@@ -211,6 +211,36 @@
     .main { padding: 36px 28px; }
     h1 { font-size: 30px; }
   }
+  /* Keep the application choices together on typical laptop screens. */
+  .brand { padding: 18px 32px; }
+  .main { max-width: 1440px; padding: 24px 32px; }
+  h1 { font-size: 30px; margin-bottom: 6px; }
+  .lead { font-size: 18px; margin-bottom: 22px; }
+  .apps { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .app { min-height: 230px; padding: 22px; gap: 10px; border-radius: 14px; }
+  .badge { width: 48px; height: 48px; font-size: 23px; border-radius: 12px; }
+  .app h2 { font-size: 24px; margin-top: 2px; }
+  .app p, .app .open { font-size: 15px; overflow-wrap: anywhere; }
+  .soon { font-size: 12px; padding: 2px 10px; }
+  .links-title { margin: 22px 0 10px; font-size: 20px; }
+  .links { gap: 16px; }
+  .link { padding: 12px 18px; font-size: 16px; }
+  .help { margin-top: 20px; font-size: 14px; }
+  @media (max-width: 1050px) {
+    .apps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .app { min-height: 190px; padding: 16px 20px; gap: 6px; }
+    .brand { padding: 14px 24px; }
+    .logo { flex-direction: row; align-items: baseline; gap: 14px; font-size: 22px; }
+    .main { padding: 20px 24px; }
+    .lead { margin-bottom: 16px; }
+  }
+  @media (max-width: 560px) {
+    .brand { padding: 14px 16px; gap: 8px; }
+    .logo { flex-direction: column; gap: 2px; }
+    .main { padding: 20px 16px; }
+    .apps, .links { grid-template-columns: minmax(0, 1fr); }
+    .app { min-height: 0; }
+  }
 </style>
 </head>
 <body>
@@ -231,7 +261,16 @@
 
     <div class="apps">
 
-      <a class="app sophie" href="https://asksophie.internal.jrdltd.co.uk">
+      <a class="app timely" href="https://asktimely.internal.jrdltd.co.uk/" target="_blank" rel="noopener noreferrer">
+        <div class="badge">T</div>
+        <h2><span>ask</span>TIMELY</h2>
+        <p>Holidays, work trips, timesheets and the Integrated Management System.</p>
+        <div class="open">Open askTIMELY
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+      </a>
+
+      <a class="app sophie" href="https://asksophie.internal.jrdltd.co.uk" target="_blank" rel="noopener noreferrer">
         <div class="badge">S</div>
         <h2><span>ask</span>SOPHIE</h2>
         <p>Products, projects, SOP documents, production, manufacturing and despatch.</p>
@@ -240,26 +279,19 @@
         </div>
       </a>
 
-      <div class="app timely waiting">
-        <div class="badge">T</div>
-        <h2><span>ask</span>TIMELY</h2>
-        <p>Holidays, work trips, timesheets and the Integrated Management System.</p>
-        <span class="soon">Coming soon</span>
-        <div class="open">asktimely.internal.jrdltd.co.uk</div>
-      </div>
+      <a class="app nucleus" href="https://nucleus.jrdltd.co.uk/" target="_blank" rel="noopener noreferrer">
+        <div class="badge">N</div>
+        <h2>Nucleus</h2>
+        <p>Open Nucleus.</p>
+        <div class="open">Open Nucleus
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+      </a>
 
       <div class="app jam waiting">
         <div class="badge">J</div>
         <h2>JAM</h2>
         <p>Description to follow.</p>
-        <span class="soon">Coming soon</span>
-        <div class="open">Not built yet</div>
-      </div>
-
-      <div class="app poppy waiting">
-        <div class="badge">P</div>
-        <h2><span>ask</span>POPPY</h2>
-        <p>Customers, contacts, quotes and the sales pipeline.</p>
         <span class="soon">Coming soon</span>
         <div class="open">Not built yet</div>
       </div>
